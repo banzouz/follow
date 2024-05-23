@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch Follow Button</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: transparent;
+        }
+        .follow-button {
+            display: none;
+            padding: 10px 20px;
+            background-color: #FF69B4;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-size: 20px;
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInOut 1s ease-in-out;
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <button class="follow-button">Follow-me</button>
+    <script>
+        function showFollowButton() {
+            const button = document.querySelector('.follow-button');
+            button.style.display = 'block';
+            setTimeout(() => {
+                button.style.display = 'none';
+            }, 10000); // Button visible for 10 seconds
+        }
+
+        setInterval(showFollowButton, 300000); // Show button every 5 minutes (300000 ms)
+
+        // Initially show the button when the page loads
+        showFollowButton();
+    </script>
+</body>
+</html>
